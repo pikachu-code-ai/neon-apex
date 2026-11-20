@@ -197,7 +197,7 @@
       gap: 6px;
     }
 
-    /* 5,000m Race Progress Bar */
+    /* Race Progress Bar */
     .race-progress-card {
       width: 100%;
       background: var(--hud-bg);
@@ -228,41 +228,6 @@
       height: 100%;
       width: 0%;
       background: linear-gradient(90deg, #00f3ff, #39ff14, #ffe600);
-    }
-
-    .boss-panel {
-      width: 100%;
-      background-color: rgba(20, 5, 16, 0.95);
-      border: 2px solid rgba(255, 30, 86, 0.88);
-      box-shadow: 0 0 24px rgba(255, 30, 86, 0.34);
-      border-radius: 12px;
-      padding: 7px 12px;
-    }
-
-    .boss-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      font-size: clamp(9.5px, 1.3vw, 11.5px);
-      font-weight: 900;
-      margin-bottom: 4px;
-    }
-
-    .boss-track {
-      position: relative;
-      width: 100%;
-      height: 10px;
-      border-radius: 999px;
-      background: #07040e;
-      border: 1px solid rgba(255, 30, 86, 0.65);
-      overflow: hidden;
-    }
-
-    .boss-fill {
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(90deg, #ff1e56 0%, #ff00ff 52%, #ffe600 100%);
     }
 
     #activePowerupsBar {
@@ -780,13 +745,13 @@
         <div class="hud-sub-row">
           <span style="color: #ff00ff;">BEST <span id="highScoreVal">0</span></span>
           <span style="color: #64748b;">&bull;</span>
-          <span style="color: #ffe600;">SEC <span id="sectorVal">1</span></span>
+          <span style="color: #ffe600;">LVL <span id="sectorVal">1</span></span>
           <span style="color: #64748b;">&bull;</span>
           <span id="speedVal" style="color: #00f3ff;">0 KM/H</span>
         </div>
       </div>
 
-      <!-- Center Stack: 5,000m Race Progress & Boss Bar -->
+      <!-- Center Stack: Race Progress & Active Powerups -->
       <div class="hud-center-col">
         <div class="race-progress-card tabular-nums">
           <div class="race-progress-head">
@@ -795,16 +760,6 @@
           </div>
           <div class="race-progress-track">
             <div id="raceDistFill" class="race-progress-fill"></div>
-          </div>
-        </div>
-
-        <div id="bossHudPanel" class="boss-panel hidden tabular-nums">
-          <div class="boss-header">
-            <span id="bossNameVal" style="color: #ff1e56;">⚠ OMEGA ENFORCER</span>
-            <span id="bossPhaseVal" style="color: #ffe600;">PHASE I</span>
-          </div>
-          <div class="boss-track">
-            <div id="bossHpFill" class="boss-fill"></div>
           </div>
         </div>
 
@@ -853,7 +808,7 @@
   <div id="bannerToast" class="hidden">
     <div id="bannerToastCard" class="banner-card">
       <div id="bannerSubText" class="hud-label" style="color: #00f3ff; margin-bottom: 3px;">CYBER-HIGHWAY INITIALIZED</div>
-      <div id="bannerTitleText" class="hud-value-md" style="color: #ffffff; letter-spacing: 0.1em;">SECTOR 1</div>
+      <div id="bannerTitleText" class="hud-value-md" style="color: #ffffff; letter-spacing: 0.1em;">LEVEL 1</div>
     </div>
   </div>
 
@@ -879,7 +834,7 @@
         <div class="modal-badge">Pseudo-3D Cyberpunk Highway Racer</div>
         <h1 class="game-title">NEON APEX</h1>
         <p class="game-subtitle">
-          Enjoy smooth, auto-cruising cyber highway racing! Customise your run with independent AI Bots and Highway Obstacles, hit <strong style="color: #39ff14;">Neon Boost Pads</strong>, and race to the <strong style="color: #ffe600;">5,000m Finish Line</strong>!
+          Enjoy smooth, auto-cruising cyber highway racing! Customise your run with independent AI Bots and Highway Obstacles, hit <strong style="color: #39ff14;">Neon Boost Pads</strong>, and race to the <strong style="color: #ffe600;">Finish Line</strong>!
         </p>
       </div>
 
@@ -940,18 +895,18 @@
         <div class="guide-box">
           <div class="guide-box-title" style="color: #00f3ff;">Clear Road Progressive Levels</div>
           <div class="guide-list">
-            <div><strong style="color: #ffe600;">🛣️ Escalating Roads (Lvl 1 ➔ 4+):</strong> Every 1,250m unlocks sharper hairpins, S-chicanes &amp; blind hills!</div>
+            <div><strong style="color: #ffe600;">🛣️ Escalating Roads (Lvl 1 ➔ 5+):</strong> Sharper hairpins, S-chicanes &amp; blind hills!</div>
             <div><strong style="color: #39ff14;">⚡ Glowing Boost Pads:</strong> Hit neon chevrons &amp; <strong>Apex Drift (Shift)</strong> to master tight turns!</div>
             <div><strong style="color: #ff1e56;">🔥 Rumble Edge Drag:</strong> Stay on the asphalt—sliding onto outer strips scrubs speed!</div>
           </div>
         </div>
 
         <div class="guide-box" style="border-color: rgba(255, 0, 255, 0.28);">
-          <div class="guide-box-title" style="color: #ff00ff;">Easy Obstacles &amp; Shields</div>
+          <div class="guide-box-title" style="color: #ff00ff;">Easy Obstacles &amp; Power-Ups</div>
           <div class="guide-list">
             <div><strong style="color: #00ff66;">🛡️ 8 Shields + Auto-Regen:</strong> Restores +1 Shield every 10s automatically</div>
-            <div><strong style="color: #ff00ff;">⚡ Massive Graze Radius:</strong> Skim traffic easily for electric arcs &amp; powerups</div>
-            <div><strong style="color: #ff1e56;">🛸 Sector Bosses:</strong> Gentle 1,200 HP Dreadnought with 2.4s telegraphs!</div>
+            <div><strong style="color: #ff00ff;">⚡ Massive Graze Radius:</strong> Skim traffic &amp; bots for electric arcs &amp; capsules</div>
+            <div><strong style="color: #00f3ff;">🌈 Hyper Overdrive (100%):</strong> EMP wave clears traffic into score crystals!</div>
           </div>
         </div>
       </div>
@@ -969,17 +924,17 @@
 
   <!-- Pause Modal -->
   <div id="pauseModal" class="modal-overlay hidden">
-      <button id="nextLevelBtn" type="button" onclick="window.startNextLevel()" class="cta-btn" style="width: 100%;">
-        ▶ NEXT LEVEL (LEVEL 2)
+    <div class="modal-card modal-card-sm" style="border-color: rgba(255, 0, 255, 0.78);">
+      <div class="hud-label" style="color: #ff00ff; margin-bottom: 4px;">HIGHWAY SIMULATION SUSPENDED</div>
+      <h2 style="margin: 0 0 18px; font-size: 28px; font-weight: 900; letter-spacing: 0.08em;">PAUSED</h2>
+      <button type="button" onclick="window.togglePause()" class="cta-btn" style="width: 100%;">
+        ▶ RESUME RACING
       </button>
-      <button id="continueEndlessBtn" type="button" onclick="window.continueEndlessMode()" class="secondary-btn">
-        🚀 CONTINUE ENDLESS MODE
-      </button>
-      <button type="button" onclick="window.openMenu()" class="secondary-btn" style="margin-top: 6px;">
+      <button type="button" onclick="window.openMenu()" class="secondary-btn">
         ⚙️ MAIN MENU / SELECT LEVEL
       </button>
-      <button id="restartBtn" type="button" onclick="window.startGame()" class="secondary-btn" style="margin-top: 6px;">
-        ↻ REPLAY LEVEL
+      <button type="button" onclick="window.startGame()" class="secondary-btn" style="margin-top: 6px;">
+        ↻ RESTART LEVEL
       </button>
     </div>
   </div>
@@ -987,7 +942,7 @@
   <!-- Finish Line Celebration / Game Over Modal -->
   <div id="gameOverModal" class="modal-overlay hidden">
     <div class="modal-card modal-card-sm" style="border-color: rgba(0, 243, 255, 0.85);">
-      <div id="modalHeaderSub" class="hud-label" style="color: #00f3ff; margin-bottom: 4px;">5,000M FINISH LINE CROSSED</div>
+      <div id="modalHeaderSub" class="hud-label" style="color: #00f3ff; margin-bottom: 4px;">FINISH LINE CROSSED</div>
       <h2 id="modalHeaderTitle" style="margin: 0; font-size: 28px; font-weight: 900; letter-spacing: 0.06em; text-shadow: 0 0 18px rgba(0,243,255,0.8);">
         PODIUM FINISH
       </h2>
@@ -1008,7 +963,7 @@
         </div>
         <div>
           <div class="hud-label" style="color: #94a3b8;">DISTANCE</div>
-          <div id="finalDistVal" class="hud-value-md" style="font-size: 14px; color: #00ff66;">5,000 m</div>
+          <div id="finalDistVal" class="hud-value-md" style="font-size: 14px; color: #00ff66;">4,000 m</div>
         </div>
         <div>
           <div class="hud-label" style="color: #94a3b8;">MAX COMBO</div>
@@ -1020,10 +975,13 @@
         </div>
       </div>
 
-      <button id="continueEndlessBtn" type="button" onclick="window.continueEndlessMode()" class="cta-btn" style="width: 100%;">
+      <button id="nextLevelBtn" type="button" onclick="window.startNextLevel()" class="cta-btn" style="width: 100%;">
+        ▶ PLAY LEVEL 2
+      </button>
+      <button id="continueEndlessBtn" type="button" onclick="window.continueEndlessMode()" class="secondary-btn">
         🚀 CONTINUE ENDLESS MODE
       </button>
-      <button type="button" onclick="window.openMenu()" class="secondary-btn">
+      <button type="button" onclick="window.openMenu()" class="secondary-btn" style="margin-top: 6px;">
         ⚙️ MAIN MENU / OPTIONS
       </button>
       <button id="restartBtn" type="button" onclick="window.startGame()" class="secondary-btn" style="margin-top: 6px;">
@@ -1175,11 +1133,6 @@
           playNoiseBurst(0.3, 700, 0.16);
           playSynth(280, 70, 0.28, 'sawtooth', 0.15, 0);
         },
-        bossWarning: function () {
-          playSynth(440, 660, 0.2, 'sawtooth', 0.14, 0);
-          playSynth(660, 440, 0.2, 'sawtooth', 0.14, 0.22);
-          playSynth(440, 740, 0.24, 'sawtooth', 0.15, 0.44);
-        },
         overtake: function () {
           if (!canPlaySound('overtake', 80)) return;
           playSynth(480, 760, 0.1, 'triangle', 0.09, 0);
@@ -1229,20 +1182,17 @@
         maxTraffic: 6,
         minSpacingZ: 1400,
         maxSpacingZ: 2200,
-        hitWidth: 0.11, // Strict center-only collision box
-        grazeRadius: 0.52, // Massive near-miss graze range
+        hitWidth: 0.11,
+        grazeRadius: 0.52,
         comboWindow: 5.5,
         invulnDuration: 3.0,
-        speedDipFactor: 0.90, // Only 10% speed reduction on hit
-        curveForceMult: 0.06, // Minimal curve pull for effortless turns
+        speedDipFactor: 0.90,
+        curveForceMult: 0.06,
         grazeDropRate: 0.35,
-        overdriveChargeRate: 10,
-        bossHp: 1200,
-        bossTelegraph: 2.4
+        overdriveChargeRate: 10
       };
       const cfg = GAME_CONFIG;
 
-      const RACE_FINISH_DISTANCE = 5000;
       const HYPER_DURATION = 7.0;
 
       const SECTOR_THEMES = [
@@ -1386,7 +1336,6 @@
       }
 
       function buildSpriteCache() {
-        // Player Plasma Bolt
         spriteCache.plasmaBolt = createOffscreenSprite(18, 42, function (sctx, cx, cy) {
           drawAtlasGlowStroke(sctx, function (c) {
             c.moveTo(cx, cy - 14);
@@ -1394,7 +1343,6 @@
           }, '#00f3ff', 8, 2.5, true);
         });
 
-        // Magnetic Score Crystal
         spriteCache.crystal = createOffscreenSprite(24, 28, function (sctx, cx, cy) {
           drawAtlasGlowStroke(sctx, function (c) {
             c.moveTo(cx, cy - 9);
@@ -1405,7 +1353,6 @@
           }, '#00f3ff', 7, 2, true);
         });
 
-        // Neon Chevron Boost Pad
         spriteCache.boostPad = createOffscreenSprite(64, 40, function (sctx, cx, cy) {
           drawAtlasGlowStroke(sctx, function (c) {
             c.moveTo(cx - 20, cy + 8);
@@ -1417,7 +1364,6 @@
           }, '#39ff14', 8, 2.5, true);
         });
 
-        // Power-Up Capsules
         Object.keys(POWERUP_CAPSULES).forEach(function (typeKey) {
           const def = POWERUP_CAPSULES[typeKey];
           spriteCache['cap_' + typeKey] = createOffscreenSprite(56, 56, function (sctx, cx, cy) {
@@ -1438,7 +1384,6 @@
           });
         });
 
-        // Road Pylon / Arch Post
         spriteCache.pylon = createOffscreenSprite(32, 90, function (sctx, cx, cy) {
           drawAtlasGlowStroke(sctx, function (c) {
             c.moveTo(cx - 10, cy + 40);
@@ -1557,7 +1502,6 @@
         let hill = 0;
         const spec = getClearRoadLevelSpec(level);
         const phase = i % 320;
-        // In Clear Road mode, use full aggressive road geometry; with Obstacles ON, scale curves gently so traffic stays fair
         const obsScale = obstaclesEnabled ? 0.58 : 1.0;
 
         if (level === 1) {
@@ -1624,7 +1568,6 @@
         totalRoadLength = roadSegments.length * SEGMENT_LENGTH;
       }
 
-      // Seamlessly morphs upcoming off-horizon road segments when advancing levels
       function upgradeUpcomingRoadForLevel(newLevel) {
         if (roadSegments.length === 0) return;
         const spec = getClearRoadLevelSpec(newLevel);
@@ -1639,7 +1582,6 @@
           const idx = (startIdx + offset) % numSegments;
           const seg = roadSegments[idx];
           const geom = computeSegmentCurveAndHill(idx, newLevel);
-          // Smoothly blend elevation over the first 25 segments beyond the horizon
           const blend = Math.min(1, (offset - safeOffset) / 25);
           const blendedHill = seg.world.y * (1 - blend) + geom.hill * blend;
           seg.curve = geom.curve * blend;
@@ -1704,10 +1646,6 @@
         raceGoalLabel: document.getElementById('raceGoalLabel'),
         raceDistVal: document.getElementById('raceDistVal'),
         raceDistFill: document.getElementById('raceDistFill'),
-        bossHudPanel: document.getElementById('bossHudPanel'),
-        bossNameVal: document.getElementById('bossNameVal'),
-        bossPhaseVal: document.getElementById('bossPhaseVal'),
-        bossHpFill: document.getElementById('bossHpFill'),
         activePowerupsBar: document.getElementById('activePowerupsBar'),
         shieldsPipsRow: document.getElementById('shieldsPipsRow'),
         comboVal: document.getElementById('comboVal'),
@@ -1821,8 +1759,6 @@
       let capsules = [];
       let boostPads = [];
       let grazeArcs = [];
-      let boss = null;
-      let bossLaserWarnings = [];
 
       let hitStopTimer = 0;
       let shakeTime = 0;
@@ -1834,7 +1770,7 @@
       const hudCache = {
         score: -1, highScore: -1, pos: '', sector: -1, speed: -1, raceDistPct: -1,
         combo: -1, comboVisible: null, comboPct: -1, hyperText: '', hyperPct: -1,
-        hyperReady: null, bossVisible: null, bossName: '', bossPhase: '', bossHpPct: -1
+        hyperReady: null
       };
 
       function resizeCanvas() {
@@ -1890,13 +1826,6 @@
         updateConfigSummary();
       };
 
-      window.setObstacles = function (enabled) {
-        obstaclesEnabled = enabled;
-        dom.obsOffBtn.classList.toggle('active', !enabled);
-        dom.obsOnBtn.classList.toggle('active', enabled);
-        updateConfigSummary();
-      };
-
       window.openMenu = function () {
         gameState = 'MENU';
         dom.pauseModal.classList.add('hidden');
@@ -1917,16 +1846,11 @@
         flashAlpha = Math.max(flashAlpha, alpha);
       }
 
-      function showBanner(sub, title, isBoss) {
+      function showBanner(sub, title) {
         dom.bannerSubText.textContent = sub;
         dom.bannerTitleText.textContent = title;
-        if (isBoss) {
-          dom.bannerToastCard.style.borderColor = 'rgba(255, 30, 86, 0.9)';
-          dom.bannerSubText.style.color = '#ff1e56';
-        } else {
-          dom.bannerToastCard.style.borderColor = 'rgba(0, 243, 255, 0.82)';
-          dom.bannerSubText.style.color = '#00f3ff';
-        }
+        dom.bannerToastCard.style.borderColor = 'rgba(0, 243, 255, 0.82)';
+        dom.bannerSubText.style.color = '#00f3ff';
         dom.bannerToast.classList.remove('hidden');
         bannerTimer = 2.2;
       }
@@ -1964,7 +1888,7 @@
       // =========================================================================
       function initBotRacers() {
         botRacers = [];
-        radarBlipNodes.forEach(n => n.remove());
+        radarBlipNodes.forEach(function (n) { n.remove(); });
         radarBlipNodes = [];
 
         if (selectedBotCount <= 0) {
@@ -2212,110 +2136,8 @@
       };
 
       // =========================================================================
-      // 9. SECTOR BOSS ENGINE
+      // 9. COLLISION & DAMAGE HANDLING
       // =========================================================================
-      function spawnSectorBoss() {
-        if (!obstaclesEnabled) return;
-
-        boss = {
-          name: 'OMEGA ENFORCER',
-          z: player.z + 3200,
-          x: 0,
-          targetX: 0,
-          hp: GAME_CONFIG.bossHp,
-          maxHp: GAME_CONFIG.bossHp,
-          phase: 1,
-          attackTimer: GAME_CONFIG.bossTelegraph,
-          hitFlash: 0
-        };
-
-        sfx.bossWarning();
-        triggerShake(0.5, 12);
-        showBanner('⚠ WARNING: BOSS DREADNOUGHT DETECTED ⚠', boss.name, true);
-      }
-
-      function damageBoss(amount) {
-        if (!boss) return;
-        boss.hp -= amount;
-        boss.hitFlash = 0.06;
-
-        if (boss.phase === 1 && boss.hp <= boss.maxHp * 0.65 && boss.hp > 0) {
-          boss.phase = 2;
-          hitStopTimer = 0.065;
-          sfx.overdrive();
-          triggerShake(0.4, 11);
-          triggerFlash('#ff00ff', 0.25);
-          showBanner(boss.name, 'PHASE II: SWEEPING PLASMA WAVES', true);
-        }
-
-        if (boss.phase === 2 && boss.hp <= boss.maxHp * 0.3 && boss.hp > 0) {
-          boss.phase = 3;
-          hitStopTimer = 0.075;
-          sfx.overdrive();
-          triggerShake(0.5, 14);
-          triggerFlash('#ffe600', 0.32);
-          showBanner(boss.name, 'PHASE III: UNBOUND OMEGA CORE', true);
-        }
-
-        if (boss.hp <= 0) {
-          const bonus = 6000 * sector;
-          boss = null;
-          bossLaserWarnings = [];
-
-          hitStopTimer = 0.1;
-          sfx.crash();
-          triggerShake(0.7, 18);
-          triggerFlash('#00f3ff', 0.4);
-
-          if (shields < GAME_CONFIG.maxShields) {
-            shields++;
-            renderShieldPips();
-          }
-
-          addScore(bonus, W * 0.5, H * 0.5, '#ffe600', 'BOSS DREADNOUGHT DESTROYED +' + bonus * combo);
-
-          sector++;
-          showBanner('SECTOR CLEARED', 'WARPING TO SECTOR ' + sector, false);
-        }
-      }
-
-      function updateBoss(dt) {
-        if (!boss) return;
-        boss.z = player.z + 2800;
-
-        if (boss.hitFlash > 0) boss.hitFlash = Math.max(0, boss.hitFlash - dt);
-
-        boss.x += (boss.targetX - boss.x) * 3.5 * dt;
-
-        boss.attackTimer -= dt * (activeTimers.chrono ? 0.5 : 1.0);
-        if (boss.attackTimer <= 0) {
-          boss.attackTimer = GAME_CONFIG.bossTelegraph;
-          boss.targetX = (Math.random() - 0.5) * 1.2;
-
-          const laneX = [-0.68, -0.22, 0.22, 0.68][Math.floor(Math.random() * 4)];
-          bossLaserWarnings.push({ x: laneX, timer: GAME_CONFIG.bossTelegraph, duration: GAME_CONFIG.bossTelegraph, width: 0.35, grazed: false });
-        }
-
-        for (let i = bossLaserWarnings.length - 1; i >= 0; i--) {
-          const l = bossLaserWarnings[i];
-          l.timer -= dt;
-          if (l.timer <= -0.4) {
-            bossLaserWarnings.splice(i, 1);
-          } else if (l.timer <= 0) {
-            if (Math.abs(player.x - l.x) < l.width * 0.5 + 0.12) {
-              handlePlayerHit();
-            } else if (!l.grazed && Math.abs(player.x - l.x) < l.width * 0.5 + 0.38) {
-              l.grazed = true;
-              bumpCombo();
-              sfx.graze(combo);
-              if (hyperTimer <= 0) hyperCharge = Math.min(100, hyperCharge + GAME_CONFIG.overdriveChargeRate);
-              damageBoss(85);
-              spawnPopup(W * 0.5, H * 0.68, 'LASER GRAZE! COUNTER-SPARK!', '#00f3ff', 0.95);
-            }
-          }
-        }
-      }
-
       function handlePlayerHit(hitIdx) {
         if (player.invulnTimer > 0 || hyperTimer > 0 || activeTimers.cloak) return;
 
@@ -2458,7 +2280,7 @@
             triggerFlash('#00f3ff', 0.22);
             const lvlBonus = 1000 * sector;
             addScore(lvlBonus, W * 0.5, H * 0.62, '#ffe600', 'LEVEL ' + sector + ' UNLOCKED! +' + lvlBonus);
-            showBanner(spec.sub, spec.title, false);
+            showBanner(spec.sub, spec.title);
           }
         }
 
@@ -2467,7 +2289,7 @@
           sfx.finishLine();
           triggerShake(0.5, 14);
           triggerFlash('#00f3ff', 0.4);
-          showBanner('🏁 LEVEL ' + sector + ' FINISH LINE CROSSED! 🏁', 'PODIUM FINISH RECORDED', false);
+          showBanner('🏁 LEVEL ' + sector + ' FINISH LINE CROSSED! 🏁', 'PODIUM FINISH RECORDED');
           triggerGameOver(true);
         }
 
@@ -2517,7 +2339,7 @@
         player.x = Math.max(-0.92, Math.min(0.92, player.x));
         player.tilt = steerDir * (player.isDrifting ? 0.32 : 0.18);
 
-        // Clear Road Rumble-Strip Edge Friction (rewards clean cornering & Apex Drift!)
+        // Clear Road Rumble-Strip Edge Friction
         if (!obstaclesEnabled && Math.abs(player.x) > 0.83 && hyperTimer <= 0 && !activeTimers.aegis) {
           const spec = getClearRoadLevelSpec(sector);
           player.speed = Math.max(150, player.speed - spec.rumbleDrag * dt);
@@ -2566,23 +2388,16 @@
 
           let hit = false;
 
-          if (boss && Math.abs(b.z - boss.z) < 220 && Math.abs(b.x - boss.x) < 0.45) {
-            hit = true;
-            damageBoss(b.dmg);
-          }
-
-          if (!hit) {
-            for (let botIdx = 0; botIdx < botRacers.length; botIdx++) {
-              const bot = botRacers[botIdx];
-              if (Math.abs(b.z - bot.z) < 180 && Math.abs(b.x - bot.x) < bot.width) {
-                hit = true;
-                bot.spinTimer = 1.0;
-                sfx.crash();
-                const pos = getEntityScreenPos(bot.x, bot.z);
-                spawnParticles(pos.x, pos.y, bot.color, 14, 1.1);
-                addScore(250, pos.x, pos.y, bot.color, 'BOT TAKEDOWN ' + bot.name + '! +250');
-                break;
-              }
+          for (let botIdx = 0; botIdx < botRacers.length; botIdx++) {
+            const bot = botRacers[botIdx];
+            if (Math.abs(b.z - bot.z) < 180 && Math.abs(b.x - bot.x) < bot.width) {
+              hit = true;
+              bot.spinTimer = 1.0;
+              sfx.crash();
+              const pos = getEntityScreenPos(bot.x, bot.z);
+              spawnParticles(pos.x, pos.y, bot.color, 14, 1.1);
+              addScore(250, pos.x, pos.y, bot.color, 'BOT TAKEDOWN ' + bot.name + '! +250');
+              break;
             }
           }
 
@@ -2694,11 +2509,6 @@
           }
         }
 
-        if (obstaclesEnabled && !boss && distanceTraveled >= Math.floor(currentGoalDistance * 0.55)) {
-          spawnSectorBoss();
-        }
-
-        if (boss) updateBoss(dt);
         updateHUD();
       }
 
@@ -2895,33 +2705,8 @@
           }
         }
 
-        // Telegraphed Boss Lasers (3D Perspective Lane Trapezoid so it never obscures the road)
-        ctx.globalCompositeOperation = 'source-over';
-        for (let i = 0; i < bossLaserWarnings.length; i++) {
-          const l = bossLaserWarnings[i];
-          const scr1 = projectEntityOnRoad(l.x, 4, player.z + 120, baseIdx, playerWorldX, cameraY);
-          const scr2 = projectEntityOnRoad(l.x, 4, player.z + 3200, baseIdx, playerWorldX, cameraY);
-          if (scr1 && scr2) {
-            const halfW1 = scr1.w * l.width * 0.45;
-            const halfW2 = scr2.w * l.width * 0.45;
-            const isFiring = l.timer <= 0;
-
-            ctx.fillStyle = isFiring ? 'rgba(255, 65, 54, 0.24)' : 'rgba(255, 200, 0, 0.09)';
-            ctx.beginPath();
-            ctx.moveTo(scr1.x - halfW1, scr1.y);
-            ctx.lineTo(scr1.x + halfW1, scr1.y);
-            ctx.lineTo(scr2.x + halfW2, scr2.y);
-            ctx.lineTo(scr2.x - halfW2, scr2.y);
-            ctx.closePath();
-            ctx.fill();
-
-            ctx.strokeStyle = isFiring ? 'rgba(255, 90, 70, 0.85)' : 'rgba(255, 230, 0, 0.55)';
-            ctx.lineWidth = isFiring ? 2.5 : 1.5;
-            ctx.stroke();
-          }
-        }
-
         // Render AI Bot Racers
+        ctx.globalCompositeOperation = 'source-over';
         for (let i = 0; i < botRacers.length; i++) {
           const bot = botRacers[i];
           const scr = projectEntityOnRoad(bot.x, 0, bot.z, baseIdx, playerWorldX, cameraY);
@@ -3000,34 +2785,6 @@
           if (capSprite && scr) {
             const sz = Math.max(18, Math.min(72, scr.w * 0.16));
             ctx.drawImage(capSprite.canvas, scr.x - sz * 0.5, scr.y - sz * 0.5, sz, sz);
-          }
-        }
-
-        // Sector Boss (Sleek Dark Gunmetal Dreadnought with Red/Amber Trim)
-        if (boss) {
-          const scr = projectEntityOnRoad(boss.x, 220 + Math.sin(nowSec * 3) * 45, boss.z, baseIdx, playerWorldX, cameraY);
-          if (scr) {
-            const bw = scr.w * 1.15;
-            const bh = bw * 0.38;
-            const bx = scr.x - bw * 0.5;
-            const by = scr.y - bh;
-
-            ctx.fillStyle = boss.hitFlash > 0 ? '#ffffff' : '#182032';
-            ctx.beginPath();
-            ctx.moveTo(scr.x, by - bh * 0.18);
-            ctx.lineTo(bx + bw, by + bh * 0.4);
-            ctx.lineTo(bx + bw * 0.85, by + bh);
-            ctx.lineTo(bx + bw * 0.15, by + bh);
-            ctx.lineTo(bx, by + bh * 0.4);
-            ctx.closePath();
-            ctx.fill();
-
-            ctx.strokeStyle = '#ff4d4d';
-            ctx.lineWidth = 2.5;
-            ctx.stroke();
-
-            ctx.fillStyle = '#ffe600';
-            ctx.fillRect(scr.x - bw * 0.15, by + bh * 0.38, bw * 0.30, bh * 0.24);
           }
         }
 
@@ -3212,7 +2969,9 @@
 
         if (hudCache.sector !== sector) { hudCache.sector = sector; dom.sectorVal.textContent = String(sector); }
 
-        // Level Race Goal Progress Bar
+        const spd = Math.round(player.speed);
+        if (hudCache.speed !== spd) { hudCache.speed = spd; dom.speedVal.textContent = spd + ' KM/H'; }
+
         const raceDistPct = Math.min(100, Math.round((distanceTraveled / currentGoalDistance) * 100));
         if (hudCache.raceDistPct !== raceDistPct) {
           hudCache.raceDistPct = raceDistPct;
@@ -3270,19 +3029,6 @@
           dom.hyperHudBtn.classList.toggle('hyper-ready-glow', hyperReady);
           if (dom.mobileNovaBtn) dom.mobileNovaBtn.classList.toggle('hyper-ready-glow', hyperReady);
         }
-
-        const bossVisible = Boolean(boss);
-        if (hudCache.bossVisible !== bossVisible) {
-          hudCache.bossVisible = bossVisible;
-          dom.bossHudPanel.classList.toggle('hidden', !bossVisible);
-        }
-        if (boss) {
-          if (hudCache.bossName !== boss.name) { hudCache.bossName = boss.name; dom.bossNameVal.textContent = '⚠ ' + boss.name; }
-          const phaseLabel = boss.phase === 3 ? 'PHASE III: UNBOUND' : boss.phase === 2 ? 'PHASE II: PLASMA' : 'PHASE I';
-          if (hudCache.bossPhase !== phaseLabel) { hudCache.bossPhase = phaseLabel; dom.bossPhaseVal.textContent = phaseLabel; }
-          const hpPct = Math.max(0, Math.round((boss.hp / boss.maxHp) * 100));
-          if (hudCache.bossHpPct !== hpPct) { hudCache.bossHpPct = hpPct; dom.bossHpFill.style.width = hpPct + '%'; }
-        }
       }
 
       // =========================================================================
@@ -3332,8 +3078,6 @@
         capsules = [];
         boostPads = [];
         grazeArcs = [];
-        boss = null;
-        bossLaserWarnings = [];
 
         particlePool.clear();
         crystalPool.clear();
@@ -3341,7 +3085,7 @@
         popupPool.clear();
 
         hudCache.score = -1; hudCache.highScore = -1; hudCache.pos = ''; hudCache.sector = -1; hudCache.speed = -1;
-        hudCache.raceDistPct = -1; hudCache.combo = -1; hudCache.comboVisible = null; hudCache.hyperText = ''; hudCache.bossVisible = null;
+        hudCache.raceDistPct = -1; hudCache.combo = -1; hudCache.comboVisible = null; hudCache.hyperText = '';
 
         gameState = 'PLAYING';
         dom.menuModal.classList.add('hidden');
@@ -3354,7 +3098,7 @@
         renderShieldPips();
         syncPowerupTimersHUD();
 
-        showBanner(levelSpec.sub, levelSpec.title, false);
+        showBanner(levelSpec.sub, levelSpec.title);
         updateHUD();
       };
 
@@ -3371,7 +3115,7 @@
         gameState = 'PLAYING';
         lastFrameTime = performance.now();
         dom.gameOverModal.classList.add('hidden');
-        showBanner('UNBOUND ENDLESS RACING', 'NO LIMITS CYBER RUN', false);
+        showBanner('UNBOUND ENDLESS RACING', 'NO LIMITS CYBER RUN');
       };
 
       window.togglePause = function () {
